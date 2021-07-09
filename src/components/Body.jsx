@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './body.css'
 import { v4 as uuidv4 } from 'uuid';
 
@@ -23,85 +23,100 @@ function Body() {
             alert("Don't leave the input field empty")
         }
     }
-    const deleteItem = (e,id)=>
-    {
+    const updateItem = (e, id) => {
         e.preventDefault()
-        console.log(id);
+        
+    }
+    const deleteItem = (e, id) => {
+        e.preventDefault()
+        setItems(items.filter((item) => item.id !== id))
+    }
+    const editItem = (e, id) => {
+        e.preventDefault()
+        const item = items.find((itm) => itm.id === id)
+        setItemName(item.itemName)
+        setItemPrice(item.itemPrice)
+        setItemQuantity(item.itemQuantity)
+        
     }
     useEffect(() => {
-      
+
     }, [items])
-   
+
     return (
         <div className="body">
-        <h1 className="input_text">Invoice Form</h1>
-           <form  id="form">
-           <input className="input_first" type="text" name="" id="" placeholder="Customer Name"/>
-           <input  className="tag_input" type="tel" name="" id="" placeholder="Contact Number" />
-           <input  className="input_first" type="text" name="" id="" placeholder="Shop Name"/>
-           <input type="text" name="" id="" className="item_name" value={itemName} onChange={(e) => { setItemName(e.target.value) }} placeholder="Item Name" />
-            <input type="number" name="" id="" className="item_price" value={itemPrice} onChange={(e) => { setItemPrice(e.target.value) }} placeholder="Item Price" />
-            <input type="number" name="" id="" className="item_quantity" value={itemQuantity} onChange={(e) => { setItemQuantity(e.target.value) }} placeholder="Item Quantity" />
-            <div className="item_list">
-                <h3>Items</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                Item Name
-                            </th>
-                            <th>
-                                Item Price
-                            </th>
-                            <th>
-                                Item Quantity
-                            </th>
-                            <th>
-                                Total Price
-                            </th>
-                            <th>
-                                Edit
-                            </th>
-                            <th>
-                                Delete
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        items.map((item) => {
-                            return (
-                               
-                                    <tr className="item" key={item.id} >
-                                        <td className="name">{item.itemName}</td>
-                                        <td className="price">{item.itemPrice}</td>
+            <h1 className="input_text">Invoice Form</h1>
+            <form id="form">
+                <input className="input_first" type="text" name="" id="" placeholder="Customer Name" />
+                <input className="tag_input" type="tel" name="" id="" placeholder="Contact Number" />
+                <input className="input_first" type="text" name="" id="" placeholder="Shop Name" />
+                <input type="text" name="" id="" className="item_name" value={itemName} onChange={(e) => { setItemName(e.target.value) }} placeholder="Item Name" />
+                <input type="number" name="" id="" className="item_price" value={itemPrice == 0 ? "" : itemPrice} onChange={(e) => { setItemPrice(e.target.value) }} placeholder="Item Price" />
+                <input type="number" name="" id="" className="item_quantity" value={itemQuantity == 0 ? "" : itemQuantity} onChange={(e) => { setItemQuantity(e.target.value) }} placeholder="Item Quantity" />
+                <div className="item_list">
+                    <h3>Items</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Item Name
+                                </th>
+                                <th>
+                                    Item Price
+                                </th>
+                                <th>
+                                    Item Quantity
+                                </th>
+                                <th>
+                                    Total Price
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                                <th>
+                                    Delete
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                items.map((item) => {
+                                    return (
 
-                                        <td className="quantity">{item.itemQuantity}</td>
-                                        <td className="total_price">{item.itemPrice * item.itemQuantity}</td>
-                                    <td id="edit" style={{cursor:"pointer"}}>📝</td>
-                                    <td id="delete" style={{cursor:"pointer"}} onClick={(e)=>{
-                                        // e.preventDefault()
-                                        deleteItem(e,item.id)}}>⚔️</td>
-                                    </tr>
-                               
+                                        <tr className="item" key={item.id} >
+                                            <td className="name">{item.itemName}</td>
+                                            <td className="price">{item.itemPrice}</td>
 
-                            )
-                        }
-                        )
+                                            <td className="quantity">{item.itemQuantity}</td>
+                                            <td className="total_price">{item.itemPrice * item.itemQuantity}</td>
+                                            <td id="edit" style={{ cursor: "pointer" }} onClick={(e) => {
+                                                // e.preventDefault()
+                                                editItem(e, item.id)
+                                            }}>📝</td>
+                                            <td id="delete" style={{ cursor: "pointer" }} onClick={(e) => {
+                                                // e.preventDefault()
+                                                deleteItem(e, item.id)
+                                            }}>⚔️</td>
+                                        </tr>
 
 
-                    }
-                    </tbody>
-                    <tfoot>
-                        <tr className="total_item_price">
-                            <td colSpan="4">Total Sum: {totalPrice}</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <button onClick={addItem} className="add" onClick={addItem}>+</button>
-            <button type="submit">Submit</button>
-           </form>
+                                    )
+                                }
+                                )
+
+
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr className="total_item_price">
+                                <td colSpan="4">Total Sum: {totalPrice}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <button onClick={addItem} className="add" onClick={addItem}>+</button>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     )
 }
