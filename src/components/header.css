@@ -1,0 +1,29 @@
+.header {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 2 10vh;
+          flex: 1 2 10vh;
+  background-color: #1244a8;
+}
+
+.header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.header nav ul li {
+  color: white;
+  font-size: 1.6rem;
+  padding: 1rem 1.5rem;
+}
+/*# sourceMappingURL=header.css.map */

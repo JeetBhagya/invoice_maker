@@ -1,0 +1,124 @@
+.bottom-margin, .body form#form button.add, .body form#form input {
+  margin-bottom: 1.5rem;
+}
+
+.body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3863da;
+}
+
+.body [class^="input"] {
+  color: blue;
+  width: 50%;
+}
+
+.body h1 {
+  margin-top: 3rem;
+  color: white;
+}
+
+.body form#form {
+  background-color: white;
+  margin: 1rem 4rem;
+  margin-bottom: 3rem;
+  padding: 3rem 4rem;
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.body form#form .item_list {
+  width: 100%;
+  margin: 1em 0;
+  height: 10em;
+  overflow-y: scroll;
+}
+
+.body form#form .item_list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.body form#form .item_list table tr {
+  text-align: center;
+}
+
+.body form#form .item_list table tr th {
+  background-color: #8cfa8c;
+}
+
+.body form#form .item_list table tr td {
+  background-color: rgba(140, 250, 140, 0.3);
+}
+
+.body form#form .item_list table .total_item_price {
+  text-align: right;
+}
+
+.body form#form .item_list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.body form#form .item_list::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.body form#form .item_list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.body form#form button.add {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.body form#form input {
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.137);
+  width: 100%;
+  padding: 1rem 1.2rem;
+}
+
+.body form#form button.add {
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  background: #1244a8;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+}
+
+.body form#form button[type=submit] {
+  padding: 1.2rem 4rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  background: #1244a8;
+  cursor: pointer;
+  color: white;
+}
+/*# sourceMappingURL=body.css.map */

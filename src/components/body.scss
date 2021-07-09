@@ -1,0 +1,134 @@
+@import "colors";
+*{
+    // color: red;
+}
+.bottom-margin
+{
+    margin-bottom: 1.5rem;
+}
+.body
+{
+   // flex:2 2 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondaryColor;
+    [class^="input"]
+    {
+        // background-color: red;
+        color:blue;
+        width: 50%;
+    }
+    h1
+    {
+        margin-top: 3rem;
+        color: $accentColor;
+    }
+    form#form
+    {
+
+        background-color: $accentColor;
+        margin: 1rem 4rem;
+        margin-bottom: 3rem;
+        padding: 3rem 4rem;
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .item_list
+{
+    width: 100%;
+    margin: 1em 0;
+    height: 10em;
+    overflow-y: scroll;
+    &::-webkit-scrollbar
+    {
+  width: 10px;
+        
+    }
+    // .item
+    // {
+    //     display: flex;
+    // }
+table
+{
+    tr
+    {
+            text-align: center;
+
+        th{
+            background-color: rgb(140, 250, 140);
+        // border: 1px solid;
+          
+        }
+        td{
+            background-color: rgba(140, 250, 140,.3);
+
+        }
+       
+    }
+     .total_item_price
+        {
+            text-align: right;
+        }
+}
+
+&::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+&::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+&::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+}
+      button.add{
+        @extend .bottom-margin;
+        @extend %button-basic;
+        align-self: flex-start;
+       
+        height: 3.5rem;
+        width: 3.5rem;
+       
+
+      }
+        input
+        {
+            @extend .bottom-margin;
+            border-radius: 2rem;
+            outline: none;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.137);
+width:100%;
+padding: 1rem 1.2rem;
+
+        }
+%button-basic
+{
+    
+    // padding: 1.2rem 4rem;
+    border-radius: 2rem;
+    outline: none;
+    border: none;
+    background: $primaryColor;
+    cursor: pointer;
+    color: $accentColor;
+    font-size: 2rem;
+} 
+        button[type=submit]
+        {
+            padding: 1.2rem 4rem;
+            border-radius: 2rem;
+            outline: none;
+            border: none;
+            background: $primaryColor;
+            cursor: pointer;
+            color: $accentColor;
+
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import 'colors';
+.header
+{
+    flex:1 2 10vh;
+    background-color: $primaryColor;
+nav
+{
+    display: flex;
+    justify-content: space-between;
+ul
+{
+    display: flex;
+    list-style:none;
+    li
+    {
+        color: $accentColor;
+        font-size: 1.6rem;
+        padding: 1rem 1.5rem;
+    }
+}
+}
+}
