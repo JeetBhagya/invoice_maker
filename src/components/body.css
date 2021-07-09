@@ -58,6 +58,10 @@
   width: 10px;
 }
 
+.body form#form .item_list table {
+  width: 100%;
+}
+
 .body form#form .item_list table tr {
   text-align: center;
 }
